@@ -66,8 +66,21 @@ public class CabServiceTest {
 		try {
 			actualFare = cabService.calculateFare(3);
 			System.out.println("enter expexted avg fare : ");
-			long expectedAggregateFare = scanner.nextLong();
-			assertEquals(expectedAggregateFare, actualFare);
+			long expectedAvgFare = scanner.nextLong();
+			assertEquals(expectedAvgFare, actualFare);
+		} catch (InvalideUserInputException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testCalculate_By_UserId_shouldReturn_AvgFare() {
+		long actualFare =0;
+		try {
+			actualFare = cabService.calculateFare(4);
+			System.out.println("enter expexted avg fare : ");
+			long expectedAvgFare = scanner.nextLong();
+			assertEquals(expectedAvgFare, actualFare);
 		} catch (InvalideUserInputException e) {
 			e.printStackTrace();
 		}
